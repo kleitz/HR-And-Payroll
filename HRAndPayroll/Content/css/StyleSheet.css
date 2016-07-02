@@ -1,0 +1,335 @@
+﻿@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+.clear {
+    clear: both;
+}
+input:focus, textarea:focus {
+    /*border:none;*/
+}
+/*======================LOGIN Page================================*/
+#wrapper {
+    width: 100%;
+}
+.loginbg {
+    background: #90d27b none repeat scroll 0 0;
+    height: 100%;
+    padding-top: 150px;
+    position: absolute;
+    width: 100%;
+}
+.login_contr {
+    color: #000;
+    margin: 0 auto;
+    width: 688px;
+}
+.login_lt {
+    background: rgba(0, 0, 0, 0) url("../Content/images/login-lt.png") no-repeat scroll 0 0;
+    border-radius: 12px 0 0 12px;
+    float: left;
+    height: 301px;
+    margin-top: 10px;
+    width: 207px;
+}
+.logi-rt {
+    background: rgba(0, 0, 0, 0) url("../Content/images/login-rt.png") no-repeat scroll 0 0;
+    border-radius: 0 12px 12px 0;
+    float: left;
+    height: 301px;
+    margin-top: 10px;
+    width: 475px;
+}
+.login_inner {
+    margin: 40px auto 0;
+    width: 349px;
+}
+.login_lable {
+    color: #000;
+    font-size: 12px;
+}
+.login_textfield {
+    border: 3px solid #d4e5ed;
+    border-radius: 6px;
+    height: 25px;
+    margin-top: 3px;
+    padding: 2px;
+    width: 329px;
+}
+.company-name {
+    color: #ffffff;
+    float: left;
+    font: bold 24px Arial,Helvetica,sans-serif;
+    padding: 10px 25px 5px 20px;
+}
+.login-info {
+    float: left;
+}
+.login-info {
+    color: #ffffff;
+    float: left;
+    font: 14px Arial,Helvetica,sans-serif;
+    padding-left: 20px;
+    width: 370px;
+}
+
+.forget-password {
+    float: left;
+    margin-left: 15px;
+    margin-top: 37px;
+}
+.forget-password a {
+    color: #ff0000;
+}
+#footer_bg {
+    background: rgba(0, 0, 0, 0) url(../Content/images/footer-bg.png) repeat-x scroll 0 0;
+    bottom: 0;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+}
+#footer_inner {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 322px;
+}
+#footer_inner ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+#footer_inner ul li {
+    color: #000;
+    display: block;
+    float: left;
+    font-size: 12px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0 3px;
+}
+#footer_inner ul li a {
+    color: #000000;
+    font-size: 12px;
+    padding: 0 3px;
+    text-decoration: none;
+}
+/*------------------------------NAV Bar--------------------------------------*/
+.container {
+    width:100%;
+    margin:0;
+}
+.nav, .nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 1;
+}
+
+.nav {
+	/* Layout & positioning */
+	position: relative;
+	height: 46px;
+	width: 100%;	
+	/* Background & effects */
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+	background: #90d27b;
+	}
+
+
+.nav>li {
+	margin: 0;
+	line-height: 1;
+	padding: 12px;
+	display: inline;
+	position: relative;
+	margin: 0 12px;
+}
+
+
+.nav>li>a {
+	display: inline-block;
+	padding: 15px 15px;
+	position: relative;
+
+	font-family: 'Myriad Set Pro';
+	font-size: 18px;
+	text-decoration: none;
+	color: #fff;
+	text-shadow: 1px 1px rgba(0, 0, 0, .1);
+	
+	-webkit-transition: color .3s linear;
+	   -moz-transition: color .3s linear;
+	     -o-transition: color .3s linear;
+	    -ms-transition: color .3s linear;
+	        transition: color .3s linear;
+}
+
+.nav>li>a:hover, .nav>li:hover>a {
+	color: rgb(82, 81, 81);
+}
+
+
+
+.nav>li:last-child>a::after {
+	display: none;
+}
+
+.nav ul {
+	position: absolute;
+	left: -9999px;
+	padding-top: 10px;
+	border-bottom: 1px solid #EFEDED;
+	opacity: 0;
+	-webkit-transition: opacity .3s linear;
+	-moz-transition: opacity .3s linear;
+	-o-transition: opacity .3s linear;
+	-ms-transition: opacity .3s linear;
+}
+
+.nav>li:hover>ul {
+	left: 0;
+	opacity: 1;
+	top: 30px;
+}
+
+
+.nav ul li:hover>ul {
+	left: 250px;
+	opacity: 1;
+	top: -11px;
+	padding-left: 12px;
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+.nav ul li {
+	display: block;
+	position: relative;
+	border-top: 1px solid #FFFEFE;
+	border-left: 1px solid #FCF7F7;
+	border-right: 1px solid #FCF9F9;
+	width: 250px;
+	text-align: left;
+	z-index: 9;
+	background: #90d27b;
+	box-shadow: 3px 4px 0 rgba(0, 0, 0, 0);
+	-webkit-transition: background .3s linear;
+	-moz-transition: background .3s linear;
+	-ms-transition: background .3s linear;
+	-o-transition: background .3s linear;
+}
+
+.nav ul li a {
+	font-family: 'Myriad Set Pro';
+	font-size: 17px;
+	text-decoration: none;
+	display: block;
+	padding: 7px 12px 7px 20px;
+	color: white;
+	-webkit-transition: color .3s linear;
+	-moz-transition: color .3s linear;
+	-ms-transition: color .3s linear;
+	-o-transition: color .3s linear;
+}
+
+.nav ul li:hover>a, .nav ul li a:hover {
+	color: #81d742;
+}
+
+
+.nav ul li:hover {
+	background: #f7f7f7;
+}
+
+.nav ul ul li:last-child {
+	border-bottom: 1px solid #81d742;
+}
+
+.nav ul ul li {
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+}
+
+.nav ul::after, .nav ul::before {
+	content: "";
+	display: block;
+	z-index: 1;
+	position: absolute;
+	height: 9px;
+	width: 9px;
+}
+
+.nav>li>ul::after {
+	border: 1px solid #ccc;
+	background: black;
+	border-right: 0;
+	border-bottom: 0;
+	top: 5px;
+	left: 25px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+}
+
+.nav>li>ul::before {
+	height: 1px;
+	width: 12px;
+	background: #eee;
+	border-right: 0;
+	border-bottom: 0;
+	top: 10px;
+	left: 24px;
+	z-index: 99;
+}
+
+.nav ul ul::after {
+	border: 1px solid #ccc;
+	background: #eee;
+	border-right: 0;
+	border-bottom: 0;
+	top: 20px;
+	left: 8px;
+	position: absolute;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+
+.nav ul ul::before {
+	height: 10px;
+	width: 1px;
+	background: #eee;
+	z-index: 99;
+	top: 20px;
+	left: 12px;
+}
+#mnuTopMenu a.static.selected {
+    background: #AAD3EC none repeat scroll 0% 0%;
+    text-decoration: none;
+    color: #E6A84B;
+}
+
+/*======================Add Formulae==================================*/
+table {
+    width:100%;
+   }
+.mainTable td {
+    color: #000000;
+    height: 28px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.txtBox {
+    height:18px;
+    
+}
+.ddl {
+    height:21px;
+}

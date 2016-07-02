@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.UserId = Session["EmpName"].ToString();
+    
+    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | Ameba Technologies Pvt Ltd</title>
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/css/StyleSheet.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <link href="~/calculate.png" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <div style="float: left; margin-right: 10px; margin-top: 2px;margin-left:5px;">
+            <a href="#">
+                <img src="@Url.Content( "~/Content/images/login-logo.png")" alt="Ameba-logo" runat="server" /></a>
+        </div>
+        <div style="float: right; margin-right: 15px; margin-top: 40px;">
+            <span ><strong>Welcome : </strong> @ViewBag.UserId</span>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="container">
+	<ul class="nav">
+        <li>@Html.ActionLink("Dashboard","Dashboard","Home")</li>
+        <li>@Html.ActionLink("Employees","","Employees")</li>
+        <li>@Html.ActionLink("Designations","","Designations")</li>
+        <li>@Html.ActionLink("Salary Formulae","ViewFormulae","SalaryFormulae")</li>
+        <li>@Html.ActionLink("Salary Appraisals","ViewSalaryAppraisal","SalaryAppraisal")</li>
+        <li>@Html.ActionLink("Salary Sheet","ViewSalarySheet","SalarySheet")</li>
+        <li>@Html.ActionLink("Logout","Login","Account")</li>       
+    </ul>
+</div>
+
+
+
+    <div id="body">
+
+        @*@RenderSection("Featured", required: false) *@
+    @*@RenderSection("Scripts", required: false)        *@
+        <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>        
+    </div>
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

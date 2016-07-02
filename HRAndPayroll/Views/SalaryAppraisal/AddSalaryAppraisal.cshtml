@@ -1,0 +1,107 @@
+﻿@model HRAndPayroll.Salary_Master
+
+@{
+    ViewBag.Title = "AddSalaryAppraisal";
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Start_Date, #Next_Due_Date').datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+
+        });
+    </script>
+
+}
+
+@using (Html.BeginForm("AddSalaryAppraisal", "SalaryAppraisal", FormMethod.Post))
+{       
+    <div class="heading">
+        Salary Appraisals
+        @*@Html.DisplayForModel()*@
+    </div>
+    <div class="divheight1">
+        <div class="innerform mT20 ">
+            <table class="mainTable">
+                <tr>
+                    <td>@* style="color:red;font-size:15px;font-family:'Century Schoolbook';">@ViewBag.save*@</td>
+                </tr>
+                <tr>
+                    <td class="td-name">Entry Date :
+                        <label>@ViewBag.EntryDate</label>
+                        @*@Html.EditorFor(Model=>Model.Entry_Date)*@               
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset class="Fieldset1">
+                            <legend>Salary Breakup</legend>
+                            <table class="tbmain">
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        Employee Name :
+                                    </td>
+                                    <td>
+                                        @Html.DropDownList("ddlName", new SelectList((System.Collections.IEnumerable)ViewData["list"], "Employee_Id", "Full_Name"),"--Select Employee--",new { @class = "ddl", data_placeholder="Choose items"})
+                                        @*@Html.TextBoxFor(Model => Model.Entry_Date, new { @class = "txtBox", @placeholder = "Entry Date" })
+                                        @Html.ValidationMessageFor(Model => Model.Basic)*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.Start_Date) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.Start_Date,"{0:dd/MM/yyyy}", new { @class = "txtBox", @placeholder = "Start Date" })
+                                        @Html.ValidationMessageFor(Model => Model.Start_Date)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.Salary_Amount) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.Salary_Amount, new { @class = "txtBox", @placeholder = "Salary Amount" })
+                                        @Html.ValidationMessageFor(Model => Model.Salary_Amount)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.Next_Due_Date) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.Next_Due_Date,"{0:dd/MM/yyyy}", new { @class = "txtBox", @placeholder = "Next Due Date" })
+                                        @Html.ValidationMessageFor(Model => Model.Next_Due_Date)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name">&nbsp;
+                                        @Html.LabelFor(Model => Model.Remarks) :</td>
+                                    <td>
+                                        @Html.TextBoxFor(Model => Model.Remarks, new { @class = "txtBox", @placeholder = "Remarks" })                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        @*name attribute of submit button should match action/method name*@
+                        <input type="submit" name="Action" value="Save" class="submit-btn" />
+                        <input type="submit" name="Action" value="Cancel" class="cancel-btn cancel" />@*onclick="document.location.href('SalaryFormulae/AddFormulae')"*@
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,210 @@
+﻿@*@model IEnumerable<HRAndPayroll.Models.clsSalarySheet>*@
+@using HRAndPayroll.Models
+@{
+    ViewBag.Title = "ViewSalarySheet";
+    HtmlHelper.ClientValidationEnabled = false;
+}
+@section Scripts {
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/css/StyleSheet.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Start_Date, #Next_Due_Date').datepicker({
+                dateFormat: "dd/mm/yy" ,
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+
+            var today = new Date();
+            var lastOfMonth = new Date(today.getYear(), today.getMonth() + 1, 0);
+            lastOfMonth = lastOfMonth.getDate();
+            $('.outergrid  tr').each(function () {
+                if (!this.rowIndex) return;
+                var Gross = $(this).find("td").eq(3).html();
+                var daysPayable = $(this).find("td").eq(15).find("span").find("input").val();
+                var ESI = $(this).find("td").eq(9).html();
+                var EPF = $(this).find("td").eq(11).html();
+                var TDS = $(this).find("td").eq(13).find("span").find("input").val();
+                var Incentive = $(this).find("td").eq(14).find("span").find("input").val();
+                var OneDayPay = (Gross / lastOfMonth);
+                var NetPay = (OneDayPay * daysPayable) - ESI - EPF - TDS;
+                NetPay = NetPay + parseInt(Incentive);
+                $(this).find("td").eq(16).find("span").find("input").val(NetPay.toFixed(2));
+            });
+            $('.outergrid  tr').keyup(function () {
+                var Gross = $(this).find("td").eq(3).html();
+                var daysPayable = $(this).find("td").eq(15).find("span").find("input").val();
+                var ESI = $(this).find("td").eq(9).html();
+                var EPF = $(this).find("td").eq(11).html();
+                var TDS = $(this).find("td").eq(13).find("span").find("input").val();
+                var Incentive = $(this).find("td").eq(14).find("span").find("input").val();
+                var OneDayPay = (Gross / lastOfMonth);
+                var NetPay = (OneDayPay * daysPayable) - ESI - EPF - TDS;
+                NetPay = NetPay + parseInt(Incentive);
+                $(this).find("td").eq(16).find("span").find("input").val(NetPay.toFixed(2));
+                
+            });
+            ///////////////////////////////
+            $('.submit-btn').click(function (e) {                
+                var webgrid = gridToJson();
+                //alert(gridToJson());
+                var url = '@Url.Action("ViewSalarySheet","SalarySheet")';
+                $.ajax({
+                    url: url,
+                    dataType: 'json',
+                    type: 'POST',
+                    data: { gridData: webgrid }
+                }).done(function (data) {
+                    if (data != "") {
+                        //message 
+                    }
+                });
+            });
+            function gridToJson() {
+                var json = '{';
+                var arr = [];
+                var tbl = $('.outergrid tbody tr').each(function (i) {
+                    if ($(this)[0].rowIndex != 0) {
+                        x = $(this).children();
+                        var arr2 = [];
+                        x.each(function () {
+                            if ($(this).children('span').children('input').length > 0) {
+                                arr2.push('"' + $(this).children('span').children('input').val() + '"');
+                                //alert(arr2);
+                            }
+                            else {
+                                arr2.push('"' + $(this).text() + '"');
+                            }
+                        });
+                        arr.push('"' + i + '":[' + arr2.join(',') + ']');
+                    }
+                    
+                });
+                json += arr.join(",") + '}'; 
+                return json;
+            }
+
+
+        });
+    </script>
+
+    <style type="text/css">
+        .outergrid {
+            margin-top: 5px;
+            width: 98%;
+        }
+        .outergrid td {
+                background-color: #fffefe;
+            }        
+        .header {
+            background-color: #9dee90;
+            text-align:left;
+        }   
+        .foot {background-color: #9dee90;
+        }
+        .align {
+            text-align:right;
+        }
+        #TDS, #Days_Payable, #Incentive {
+            width:80px;
+            background-color:#eafae7;
+            /*box-shadow: 1px 1px 1px 1px ;*/
+        }
+        #Net_Payable {
+            width:80px;
+            background-color:#d9f6d4;
+        }         
+    </style>
+    
+}
+@{
+    var grid = new WebGrid(Model.mySalarySheetList, canPage: true, rowsPerPage: 10, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+    grid.Pager(WebGridPagerModes.NextPrevious);    
+}
+
+
+@using (Html.BeginForm("ViewSalarySheet", "SalarySheet"))
+{ 
+    <div class="heading">
+        Salary Appraisals 
+        <div style="float: right; padding-right: 30px;"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="divheight1">
+        <div class="innerform mT20 ">
+            <table class="myForm">
+                <tr>
+                    <td>
+                        Salary Month : 
+                    </td>
+                    <td>
+                       @*@Html.TextBox("SalaryMonth", new { id="SalMonth",@class="txtBox", @placeholder = "Salary Month"})*@
+                        @Html.DropDownList("SalaryMonth", new SelectList(Model.Months,"Value", "Text"), "--Select Month--", new { @class = "ddl" }) 
+                    </td>
+                    <td>
+                        Salary Year : 
+                    </td>
+                    <td>
+                        @*@Html.TextBox("SalaryYear",null, new { id="SalYear",@class="txtBox", @placeholder = "Salary Year"})*@
+                        @Html.DropDownList("SalaryYear", new SelectList(Model.Years,"Value", "Text"), "--Select Year--", new { @class = "ddl" }) 
+                    </td>
+                    <td>
+                        <input type="submit" name="Action" value="Search" class="search-btn" />
+                        <input type="submit" name="Action" value="Clear" class="search-btn" />
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+
+            <div id="grid">
+                @grid.GetHtml(
+            tableStyle: "outergrid",
+            htmlAttributes: new { id = "salaryGrid" },
+            headerStyle: "header",
+            alternatingRowStyle: "alt",
+            selectedRowStyle: "select",
+            emptyRowCellValue: "No records found!",
+            footerStyle: "foot",
+            columns: grid.Columns(
+        //grid.Column("Start_Date", "Start Date",format: (item) => string.Format("{0:dd/MM/yyyy}",item.Start_Date)),
+        grid.Column("Employee Name", format : @<text>@item.Employee_Name</text>),
+            grid.Column("Employee Code",format : @<text>@item.Employee_Code</text>, canSort: true),
+            grid.Column("Designation",format : @<text>@item.Designation</text>),
+            grid.Column("Gross Salary",format : @<text>@item.Gross_Salary</text>, style: "align"),
+            grid.Column("Basic Salary",format : @<text>@item.Basic_Salary</text>, style: "align"),
+            grid.Column("HRA", format: @<text>@String.Format("{0:0.00}", @item.HRA) </text>, style: "align"),
+            grid.Column("Conveyance Allowance", format: @<text>@String.Format("{0:0.00}", @item.Conveyance_Allowance) </text>, style: "align"),
+            grid.Column("Medical Allowance", format: @<text>@String.Format("{0:0.00}", @item.Medical_Allowance) </text>, style: "align"),
+            grid.Column("Other Allowance", format: @<text>@String.Format("{0:0.00}", @item.Other_Allowance) </text>, style: "align"),
+            grid.Column("ESI EE Share", format: @<text>@String.Format("{0:0.00}", @item.ESI_EE_Share) </text>, style: "align"),
+            grid.Column("ESI EY Share", format: @<text>@String.Format("{0:0.00}", @item.ESI_EY_Share) </text>, style: "align"),
+            grid.Column("EPF EE Share", format: @<text>@String.Format("{0:0.00}", @item.EPF_EE_Share) </text>, style: "align"),
+            grid.Column("EPF EY Share", format: @<text>@String.Format("{0:0.00}", @item.EPF_EY_Share) </text>, style: "align"),
+            grid.Column("TDS", style: "align", format: @<span>@Html.TextBox("TDS",@item.TDS as object)</span>),
+            grid.Column("Incentive", style: "align", format: @<span>@Html.TextBox("Incentive",@item.Incentive as object)</span>),
+            grid.Column("Days Payable", style: "align", format: @<span>@Html.TextBox("Days_Payable",@item.Days_Payable as object)</span>),
+            grid.Column("Net Payable", style: "align", format: @<span>@Html.TextBox("Net_Payable")</span>)
+        //grid.Column(header: "Action", 
+        //   format: @<text>
+        //       <a href="@Url.Action("AddFormulae", "SalaryFormulae", new { Id = item.Entry_Id })" ><img src="../Content/images/edit.png" style="border:none;" /></a>
+        //       <a href="@Url.Action("Delete", "SalaryFormulae", new { id = item.Entry_Id})"  onclick="return confirm('Are you sure you want to Delete?')" ><img src="../../Content/images/delete.png" style="border:none;" /></a>
+        //  </text>)
+            ))
+            </div>
+            <div class="clear"></div>
+            <div class="clear"></div>
+            <div style="margin-top: 10px; text-align: right; padding-right: 20px;">
+                <input type="submit" name="Action" value="Save" class="submit-btn" />
+                <input type="submit" name="Action" value="Generate Pay Slip" class="search-btn" />
+                <input type="submit" name="Action" value="Generate Salary Sheet" class="search-btn" />
+            </div>
+        </div>
+    </div>
+}

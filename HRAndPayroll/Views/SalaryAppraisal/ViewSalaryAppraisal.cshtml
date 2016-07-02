@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "ViewSalaryAppraisal";
+}
+
+@using (Html.BeginForm("ViewSalaryAppraisal", "SalaryAppraisal ", FormMethod.Post))
+{
+    <div class="heading">
+        Salary Appraisal @Html.ActionLink("Add Salary Appraisal ","AddSalaryAppraisal", "SalaryAppraisal")
+        <div style="float: right; padding-right: 30px;"></div>
+    </div>
+    <div class="clear"></div>
+}

@@ -1,0 +1,742 @@
+﻿@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 14px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+	
+	
+}
+.ddl {
+    width:142px;
+    text-align:left;
+}
+
+#wrapper{width:100%;}
+
+.mT20{margin-top:10px;}
+.clear{clear:both;}
+.mT10{
+}
+
+/*------------------ Admin Menus----------------------------------------*/
+div.container  li.active a {
+    color:#666666;
+}
+/*-------------------------------------------------------------------*/
+
+/*--------------------------login page css---------------------------*/
+.loginbg{background:#90D27B; width:100%; height:100%; position:absolute; padding-top:150px; }
+.login_contr{width:688px; margin:0 auto; color:#000;}
+.login_lt{background:url(../images/login-lt.png) no-repeat; width:207px; height:301px; float:left; margin-top:10px;border-radius:12px 0px 0px 12px;}
+.logi-rt{ background:url(../images/login-rt.png) no-repeat; width:475px; height:301px; float:left; margin-top:10px;border-radius: 0px 12px 12px 0px;}
+.login_inner{width:349px; margin:0 auto; margin-top:40px;}
+.login_lable{color:#000; font-size:12px;}
+.login_textfield{width:329px; padding:2px; margin-top:3px; height:25px;  -moz-border-radius: 6px;
+    -webkit-border-radius:6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+	border:solid 3px #d4e5ed;}
+	
+	
+.company-name{    color: #FFFFFF; font: bold 24px Arial,Helvetica,sans-serif; padding: 10px 25px 5px 20px; float:left;
+}
+.login-info {
+    float: left;
+}
+.login-info {
+    color: #FFFFFF;
+    float: left;
+    font: 14px Arial,Helvetica,sans-serif;
+    padding-left: 20px;
+    width: 370px;
+}
+.login-button{float:left; padding-left:85px;}
+.forget-password{float:left; margin-top:37px; margin-left:15px;}
+.forget-password a{ color:#FF0000; }
+
+
+/*-------------------------------footer css---------------------------*/
+#footer_bg{ background:url(../images/footer-bg.png) repeat-x; width:100%; height:53px;position:fixed;bottom:0;}
+#footer_inner{width:322px; margin:0 auto; padding-top:20px;}
+#footer_inner ul{margin:0px; padding:0px; list-style:none;}
+#footer_inner ul li{margin:0px; padding:0px; list-style:none; display:block; float:left; padding:0 3px 0 3px; color:#000; font-size:12px;}
+#footer_inner ul li a{padding:0 3px 0 3px; text-decoration:none; color:#000000; font-size:12px;}
+
+
+
+/*------------------------menu css------------------------------*/
+
+#navigation{background:#dfeff9; height:44px; position:relative;margin-top:10px;z-index:9999;}
+.ddsmoothmenu{
+	float: left;
+	position:absolute;
+	top:-5px;
+}
+
+.ddsmoothmenu ul{
+	z-index:100;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/*Top level list items*/
+.ddsmoothmenu ul li{
+	position: relative;
+	display: inline;
+	float: left;
+}
+
+/*Top level menu link items style*/
+.ddsmoothmenu ul li a{
+	display: block;
+	height:47px;
+	line-height: 23px;
+	padding: 13px 20px 5px 15px;
+	margin: 0 7px 0 0;
+	font-size: 14px;
+	color: #fff;	
+	text-align: center;
+	text-decoration: none;
+	font-weight: 300;
+	outline: none;
+	border: none;
+}
+
+* html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.ddsmoothmenu ul li a.selected, .ddsmoothmenu ul li a:hover { /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+	position: relative;
+	background: url(../images/nav-mhr.png) no-repeat top right;
+	color:#c92a32;
+}
+
+.ddsmoothmenu ul li a.selected span, .ddsmoothmenu ul li a:hover span {
+	position: absolute;
+	width: 5px;
+	height: 51px;
+	top:30px;
+	left: -5px;
+	background: url(../images/nav-mhl.png) no-repeat;
+	
+}
+	
+/*1st sub level menu*/
+.ddsmoothmenu ul li ul{
+	position: absolute;
+	left: 0;
+	/*display: none; /*collapse all sub menus to begin with*/
+	/*visibility: hidden;*/
+	background: #bad8f7;
+	top:30px;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.ddsmoothmenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.ddsmoothmenu ul li ul li ul{
+top: 40px;
+}
+
+/* Sub level menu links style */
+.ddsmoothmenu ul li ul li a{
+	font-weight: 300;
+	width: 120px; /*width of sub menus*/
+	padding: 2px 10px;
+	margin: 0;
+	font-size: 12px;
+	border-top-width: 0;
+	text-align: left;
+	color:#c92a32;
+	
+}
+
+
+.ddsmoothmenu ul li ul li a.selected, .ddsmoothmenu ul li ul li a:hover { text-decoration: underline; background: none; color:#c92a32; }
+
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 12px;
+right: 7px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+.ddshadow{
+position: absolute;
+left: 0;
+top: 0;
+width: 0;
+height: 0;
+background: #fff;
+}
+
+.toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
+opacity: 0.5;
+} 
+
+/*---------------------------dashboard css--------------------------------*/
+.heading{background:url(../images/hedding-bg.png) repeat-x; padding:16px 0 0 20px; font-size:18px; height:30px;
+}
+
+.outergrid{ -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -khtml-border-radius: 12px;
+    /*border-radius: 12px;*/
+	border:solid 1px #90D27B;
+	background:#C0F5B0;
+	margin-top:1px;
+	margin-left:10px; margin-right:10px;
+	}
+	
+	.outergrid th {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    font: bold 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    letter-spacing: 1px;
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align:left;*/
+}
+
+	.outergrid th a {
+    color: black;
+    font: bold 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    text-decoration: none;   
+}
+
+.outergrid td {
+    font: none 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif; 
+     padding: 6px 6px;
+}
+
+.outergrid1{ -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -khtml-border-radius: 12px;
+    border-radius: 12px;
+	border:solid 2px #aad3ec;
+	background:#dfeff9;
+	margin-top:5px;
+	margin-left:10px; margin-right:10px;
+	}
+	
+.outergrid1 th {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    font: bold 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    letter-spacing: 1px;
+    padding: 5px;
+    vertical-align: middle;
+    border-left:1px solid #aad3ec;
+    /*text-align:left;*/
+}
+
+.outergrid1 th a {
+    color: black;
+    font: bold 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    text-decoration: none;   
+}
+
+.outergrid1 td {
+    font: none 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif; 
+     padding: 5px 5px;
+     border-left:1px solid #aad3ec;
+}
+
+.outergrid1 table td {
+    border:none;
+}
+
+.grid-hd{ font-size:16px; padding-top:5px;height:40px; }
+.grid1{ background:#f6f6f6; height:31px;}
+.grid2{ background:#fff;height:31px; }
+.colum_brd{border-bottom:solid 1px #eeb9bb; border-top:solid 1px #eeb9bb;}
+.grid_detail{font-size:12px; color:#3b3f42; padding-top:8px;height:40px;}
+.grid_detail1{font-size:12px; color:#3b3f42; padding-top:8px;height:40px;border:none}
+.grid_detail1 td {
+    font: none 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif; 
+     padding: 6px 6px;
+     border:none;
+}
+
+/*----------------------css add on 14/9/2012-----------------------------*/
+.innerform{-moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+	border:solid 1px #eee;
+	padding:10px;
+	margin-top:0;
+	width:98%;
+	margin-left:auto; margin-right:auto;
+	margin-bottom:20px;
+	
+	}
+	
+	.chart{-moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+	border:solid 1px #dc878a;
+	background:white;
+	padding:10px;
+	margin-top:40px;
+	width:550px;
+	margin-left:50px; margin-right:20px;
+	margin-bottom:20px;
+	
+	}
+
+	.innerform tr
+	{
+	    padding-right:20px;
+	    padding-left:10px;
+	}
+	
+	
+	
+.textfield{width:180px; font-size:12px;height: auto;}
+.lable{text-align:right; padding-right:5px;}
+th{ font-size:13px; padding-top:8px;  padding-left:10px;padding-right: 10px;}
+td{ padding-left:10px;padding-right: 10px;}
+
+.divheight{ min-height:400px;}
+.itemrghtP{ padding-right:60px;}
+.itemrght1{ padding-right:200px;}
+
+.divheight1{ min-height:700px;}
+
+.Drpdwn {
+    font-size: 12px;
+    height: auto;
+    width: 185px;
+}
+.myForm {
+    /*background-image: url("../Images/red_border_bg.jpg");*/
+    background:#C0F5B0;
+    background-repeat: repeat-x;
+    border: 1px solid #90D27B;
+    font: bold 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    margin: 0 auto;
+    padding: 14px;
+    width:98%;
+    margin-left:10px;
+    border-radius: 5px;
+}
+
+.myForm tr td {
+    font: bold 9pt "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    padding: 4px;
+    text-align: left;
+    vertical-align: middle;
+    width:3%;
+}
+
+#overlay {
+ display: none;
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ cursor:wait;
+ background: #041128;
+ z-index:50;
+ opacity: 0.5;
+ -ms-filter: "alpha (opacity=50)";
+ filter: alpha (opacity=50);
+}
+ 
+#overlay img 
+{
+    position:relative;    
+    left:50%; 
+    top:50%;
+    z-index:100;    
+
+}
+
+.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	width:530px;
+	margin-left: 20px;
+	margin-bottom: 12px;	
+}
+.gridtable th {
+	border-width: 1px;	
+	border-style: solid;
+	border-color: #666666;
+	background-color: #D5DBD8;
+	height: 25px;
+	max-height:25px;
+}
+.gridtable td {
+	border-width: 1px;	
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+	height: 25px;
+	background-repeat:repeat;
+	padding-bottom: 7px;
+}
+
+.table {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	width:99%;
+
+}
+.table th {
+	border-width: 1px;	
+	border-style: solid;
+	border-color: #666666;
+	background-color: #D5DBD8;
+	height: 30px;
+}
+.table td {
+	border-width: 1px;	
+	border-style: solid;
+	border-color: #666666;
+	background-color: #F1F3F2;
+	padding-top:10px;
+}
+.form .field-group .field{
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 .65em 10px 0;
+    width: 35.5%;
+   
+}
+.form .field-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: .25em;
+ 
+}
+ .RadioButtonList
+{
+    width:auto;
+    }
+.RadioButtonList label
+{
+    float:left;
+    font-weight:normal!important;
+}
+    
+.RadioButtonList .radio
+{
+   float:right;
+   
+}
+
+.RadioButtonList input
+{
+    float:left ;
+}
+
+.mainTitle
+{
+    font-weight:bold !important;
+    color:Black !important;
+}
+.subTitle
+{
+    font-weight:normal !important;
+    color:#7D7D7D !important;
+}
+
+
+/*menu css*/
+
+#mnuTopMenu 
+{
+    padding-top:0;
+
+}
+#mnuTopMenu a.static.highlighted
+{
+  /*background: url(../images/nav-mhr.png) repeat; color:#C92A32; */
+  background:#f1f6fa;
+   color:#39668e;
+}
+
+#mnuTopMenu a.static.selected {
+    /*background: url(../images/nav-mhr.png) repeat;*/
+    background:#aad3ec;
+    text-decoration: none;
+    color:#39668e;
+}
+#mnuTopMenu a.static {
+    padding:14px 21px !important;
+    text-decoration: none !important;
+}
+#mnuTopMenu a {
+    font-family: Verdana;
+    text-decoration: none;
+    font-size:14px;
+    white-space: nowrap;
+    /*font-weight:bold;*/
+    color:#000;
+}
+#mnuTopMenu ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+
+#mnuTopMenu ul.dynamic {
+    margin-left: 2px;
+    z-index: 1;
+}
+#mnuTopMenu ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+#mnuTopMenu ul.dynamic li a{ color:#39668e; background:#f1f6fa; padding:8px;}
+#mnuTopMenu ul.dynamic li a:hover{ color:#39668e; padding:8px;background:#aad3ec;}
+
+
+/*--------------------Add salary Formulae-------------------------------------------*/
+.Fieldset1 {
+    border: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 1em;
+    width: 55%;
+    border-radius:5px;
+}
+.tbmain {
+    width:100%;
+}
+td {
+    /*height:30px;*/
+    padding-bottom:7px;
+    color:#000000;
+}
+.td-name {
+            width: 40%;
+            font-size:14px;
+            
+        }
+td #Address {
+   vertical-align:top;
+}
+.submit-btn 
+{
+  background: #83c56e ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-left:2px;
+}
+.submit-btn:hover {
+  background: #74AD62  ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  margin-left:2px;
+}
+.login-btn {
+    background:#90D27B;
+    border: medium none;
+  color: #FFFFFF;
+  cursor:pointer;
+  font-family: "Myriad Set Pro";
+  font-size: 18px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+.login-btn:hover {
+        color: #525151;
+    }
+.cancel-btn {
+  background: #83c56e ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-left:10px;
+}
+.cancel-btn:hover {
+  background: #74AD62  ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  margin-left:10px;
+}
+.Star-clr {
+            color: #CC3300;
+        }
+
+.Download-btn {
+    background: #83c56e ;
+    border: medium none;
+    color: #fff;
+    cursor:pointer;
+    padding: 4px 7px;
+    border-radius:1px;
+    font-weight:normal;
+    margin-left:10px;
+}
+.Download-btn:hover {
+    background: #74AD62  ;
+    border: medium none;
+    cursor:pointer;
+    padding: 4px 7px;
+    border-radius:1px;
+    font-weight:normal;
+    margin-left:10px;
+    text-shadow:4px;
+}
+/*---------------------------------------------------------------------------------*/
+/*-------------------VIEW SALARY FORMULAE------------------------------------------*/
+.lbtnAddSalary {
+    text-decoration:none;
+    font-weight:300;
+    font-family:Arial;
+    font-size:14px;
+    font:bold;
+}
+.lbtnAddSalary :hover{
+    font-weight:500;
+    text-decoration:underline;
+}
+.search-btn 
+{
+  background: #83c56e ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-left:2px;
+}
+.search-btn:hover {
+  background: #74AD62  ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  margin-left:2px;
+}
+.addsal-btn 
+{
+  background: #83c56e ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-left:2px;
+}
+.addsal-btn :hover {
+  background: #74AD62  ;
+  border: medium none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius:3px;
+  margin-left:2px;
+}
+
+/*---------------------------------------------------------------------------------*/
+/*-----Salary Master*/
+.tbSalaryMaster {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+	border:solid 1px #eee;
+	padding-top:10px; padding-bottom:10px;
+	margin-top:0;
+	width:55%;
+	margin-left:0; margin-right:auto;
+	margin-bottom:20px;
+}
+.txtRemarks {
+    text-align:left;
+    vertical-align:top;
+    width:140px;
+}
+
+.td-rptSheet {
+    width:50%;
+    height:17px;
+    padding-bottom:7px;
+    padding-left:0;
+    padding-right:0;
+    border-radius:5px;
+
+}
+
+.td-rptSheet td{
+    height:17px;
+    padding-bottom:7px;
+    padding-left:0;
+    padding-right:0;
+    background-color: #90d27b;
+    border-radius:5px;
+
+}
+.td-report {
+    height:17px;
+    padding-bottom:7px;
+    padding-left:25%;
+    padding-right:0;
+}
+
+.td-report td{
+    height:17px;
+    padding-bottom:7px;
+    padding-left:0;
+    padding-right:0;
+    background-color: #90d27b;
+    border-radius:5px;
+}

@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRAndPayroll_TestModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Designation_Masters" EntityType="HRAndPayroll_TestModel.Designation_Master" />
+    <EntitySet Name="Employee_Masters" EntityType="HRAndPayroll_TestModel.Employee_Master" />
+    <EntitySet Name="Salary_Formulas" EntityType="HRAndPayroll_TestModel.Salary_Formula" />
+    <EntitySet Name="Salary_Masters" EntityType="HRAndPayroll_TestModel.Salary_Master" />
+    <EntitySet Name="Salary_Sheets" EntityType="HRAndPayroll_TestModel.Salary_Sheet" />
+    <FunctionImport Name="AddOrUpdateDesignation">
+      <Parameter Name="DesignationId" Mode="In" Type="Int32" />
+      <Parameter Name="DesignationName" Mode="In" Type="String" />
+      <Parameter Name="DateTimeLastUpdated" Mode="In" Type="DateTime" />
+      <Parameter Name="LastUpdateUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddOrUpdateEmployee">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeCode" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="FatherName" Mode="In" Type="String" />
+      <Parameter Name="MotherName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="MaritalStatus" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="DOJ" Mode="In" Type="DateTime" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="EmergencyNo" Mode="In" Type="String" />
+      <Parameter Name="BloodGroup" Mode="In" Type="String" />
+      <Parameter Name="PANCardNo" Mode="In" Type="String" />
+      <Parameter Name="PersonalEmailId" Mode="In" Type="String" />
+      <Parameter Name="OfficialEmailId" Mode="In" Type="String" />
+      <Parameter Name="SkypeId" Mode="In" Type="String" />
+      <Parameter Name="DesignationId" Mode="In" Type="Int32" />
+      <Parameter Name="ReportToManager" Mode="In" Type="Int32" />
+      <Parameter Name="IsManager" Mode="In" Type="Boolean" />
+      <Parameter Name="IsAdmin" Mode="In" Type="Boolean" />
+      <Parameter Name="SalaryAtJoining" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="DateTimeLastUpdated" Mode="In" Type="DateTime" />
+      <Parameter Name="LastUpdateUserId" Mode="In" Type="Int32" />
+      <Parameter Name="NextDueDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddOrUpdateSalary">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+      <Parameter Name="EntryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="SalaryAmount" Mode="In" Type="Int32" />
+      <Parameter Name="NextDueDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Remarks" Mode="In" Type="String" />
+      <Parameter Name="DateTimeLastUpdated" Mode="In" Type="DateTime" />
+      <Parameter Name="LastUpdateUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddOrUpdateSalaryFormulas">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Basic" Mode="In" Type="String" />
+      <Parameter Name="HRA" Mode="In" Type="String" />
+      <Parameter Name="ConveyanceAllowance" Mode="In" Type="String" />
+      <Parameter Name="MedicalAllowance" Mode="In" Type="String" />
+      <Parameter Name="OtherAllowance" Mode="In" Type="String" />
+      <Parameter Name="EPFLimit" Mode="In" Type="String" />
+      <Parameter Name="EPFEmployeeShare" Mode="In" Type="String" />
+      <Parameter Name="EPFEmployerShare" Mode="In" Type="String" />
+      <Parameter Name="EPFApplicableOn" Mode="In" Type="String" />
+      <Parameter Name="ESILimit" Mode="In" Type="String" />
+      <Parameter Name="ESIEmployeeShare" Mode="In" Type="String" />
+      <Parameter Name="ESIEmployerShare" Mode="In" Type="String" />
+      <Parameter Name="ESIApplicableOn" Mode="In" Type="String" />
+      <Parameter Name="DateTimeLastUpdated" Mode="In" Type="DateTime" />
+      <Parameter Name="LastUpdateUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddOrUpdateSalarySheet">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+      <Parameter Name="SalaryMonth" Mode="In" Type="Int32" />
+      <Parameter Name="SalaryYear" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="GrossSalary" Mode="In" Type="Int32" />
+      <Parameter Name="DaysPayable" Mode="In" Type="Double" />
+      <Parameter Name="ESIEmployeeShare" Mode="In" Type="Double" />
+      <Parameter Name="ESIEmployerShare" Mode="In" Type="Double" />
+      <Parameter Name="EPFEmployeeShare" Mode="In" Type="Double" />
+      <Parameter Name="EPFEmployerShare" Mode="In" Type="Double" />
+      <Parameter Name="TDS" Mode="In" Type="Double" />
+      <Parameter Name="Incentive" Mode="In" Type="Double" />
+      <Parameter Name="NetPayable" Mode="In" Type="Double" />
+      <Parameter Name="DateTimeLastUpdated" Mode="In" Type="DateTime" />
+      <Parameter Name="LastUpdateUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CheckSalarySheet" ReturnType="Collection(HRAndPayroll_TestModel.CheckSalarySheet_Result)">
+      <Parameter Name="SalaryMonth" Mode="In" Type="Int32" />
+      <Parameter Name="SalaryYear" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CheckUser">
+      <Parameter Name="EmployeeCode" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeactivateEmployee">
+      <Parameter Name="EmpCode" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteDesignation">
+      <Parameter Name="DesignationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteEmployee">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSalary">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSalaryFormulas">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSalarySheet">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDesignationDetail" ReturnType="Collection(HRAndPayroll_TestModel.GetDesignationDetail_Result)">
+      <Parameter Name="DesignationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDesignationList" ReturnType="Collection(HRAndPayroll_TestModel.GetDesignationList_Result)" />
+    <FunctionImport Name="GetEmployee">
+      <Parameter Name="EmpId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeDetail" ReturnType="Collection(HRAndPayroll_TestModel.GetEmployeeDetail_Result)">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeList" ReturnType="Collection(HRAndPayroll_TestModel.GetEmployeeList_Result)" />
+    <FunctionImport Name="GetManagerList" ReturnType="Collection(HRAndPayroll_TestModel.GetManagerList_Result)" />
+    <FunctionImport Name="GetMiniEmployeeDetail">
+      <Parameter Name="EmpCode" Mode="In" Type="String" />
+      <Parameter Name="EmployeeId" Mode="In" Type="String" />
+      <Parameter Name="ManagerEmployeeId" Mode="In" Type="String" />
+      <Parameter Name="DesignationId" Mode="In" Type="String" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalaryDetail" ReturnType="Collection(HRAndPayroll_TestModel.GetSalaryDetail_Result)">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalaryFormulasDetail" ReturnType="Collection(HRAndPayroll_TestModel.GetSalaryFormulasDetail_Result)">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalaryFormulasList">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Basic" Mode="In" Type="String" />
+      <Parameter Name="HRA" Mode="In" Type="String" />
+      <Parameter Name="ConveyanceAllowance" Mode="In" Type="String" />
+      <Parameter Name="MedicalAllowance" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalaryList" ReturnType="Collection(HRAndPayroll_TestModel.GetSalaryList_Result)" />
+    <FunctionImport Name="GetSalarySearchList">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EmpName" Mode="In" Type="String" />
+      <Parameter Name="SalaryAmt" Mode="In" Type="String" />
+      <Parameter Name="nextDueDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalarySheetDetail" ReturnType="Collection(HRAndPayroll_TestModel.GetSalarySheetDetail_Result)">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalarySheetList" ReturnType="Collection(HRAndPayroll_TestModel.GetSalarySheetList_Result)">
+      <Parameter Name="SalaryYear" Mode="In" Type="Int32" />
+      <Parameter Name="SalaryMonth" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSalarySheetReport" ReturnType="Collection(HRAndPayroll_TestModel.GetSalarySheetReport_Result)">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserInfo" ReturnType="Collection(HRAndPayroll_TestModel.GetUserInfo_Result)">
+      <Parameter Name="EmpCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SalaryReport" ReturnType="Collection(HRAndPayroll_TestModel.SalaryReport_Result)">
+      <Parameter Name="SalaryYear" Mode="In" Type="Int32" />
+      <Parameter Name="SalaryMonth" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spSalarySheet" ReturnType="Collection(HRAndPayroll_TestModel.spSalarySheet_Result)" />
+    <FunctionImport Name="UpdateDatePaid">
+      <Parameter Name="EntryId" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="DatePaid" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Designation_Master">
+    <Key>
+      <PropertyRef Name="Designation_Id" />
+    </Key>
+    <Property Name="Designation_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation_Name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DateTimeLastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Employee_Master">
+    <Key>
+      <PropertyRef Name="Employee_Id" />
+    </Key>
+    <Property Name="Employee_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="First_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Father_s_Name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Mother_s_Name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Marital_Status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Zip_Code" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DOJ" Type="DateTime" Precision="3" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Mobile_Number" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Emergency_Number" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Blood_Group" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="PAN_Card_Number" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Personal_Email_Id" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Official_Email_Id" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Skype_Id" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Designation_Id" Type="Int32" />
+    <Property Name="Report_To__Manager_" Type="Int32" />
+    <Property Name="Is_Manager" Type="Boolean" />
+    <Property Name="Is_Admin" Type="Boolean" />
+    <Property Name="Salary_At_Joining" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="DateTimeLastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Salary_Formula">
+    <Key>
+      <PropertyRef Name="Entry_Id" />
+    </Key>
+    <Property Name="Entry_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Start_Date" Type="DateTime" Precision="3" />
+    <Property Name="Basic" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="HRA" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Conveyance_Allowance" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Medical_Allowance" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Other_Allowance" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EPF_Limit" Type="Int32" />
+    <Property Name="EPF_Employee_Share" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EPF_Employer_Share" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EPF_Applicable_On" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ESI_Limit" Type="Int32" />
+    <Property Name="ESI_Employee_Share" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ESI_Employer_Share" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ESI_Applicable_On" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DateTimeLastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Salary_Master">
+    <Key>
+      <PropertyRef Name="Entry_Id" />
+    </Key>
+    <Property Name="Entry_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="3" />
+    <Property Name="Employee_Id" Type="Int32" />
+    <Property Name="Start_Date" Type="DateTime" Precision="3" />
+    <Property Name="Salary_Amount" Type="Int32" />
+    <Property Name="Next_Due_Date" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="DateTimeLastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Salary_Sheet">
+    <Key>
+      <PropertyRef Name="Entry_Id" />
+    </Key>
+    <Property Name="Entry_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Salary_Month" Type="Int32" />
+    <Property Name="Salary_Year" Type="Int32" />
+    <Property Name="Employee_Id" Type="Int32" />
+    <Property Name="Gross_Salary" Type="Int32" />
+    <Property Name="Days_Payable" Type="Double" />
+    <Property Name="ESI_EE_Share" Type="Double" />
+    <Property Name="ESI_EY_Share" Type="Double" />
+    <Property Name="EPF_EE_Share" Type="Double" />
+    <Property Name="EPF_EY_Share" Type="Double" />
+    <Property Name="TDS" Type="Double" />
+    <Property Name="Incentive" Type="Double" />
+    <Property Name="Net_Payable" Type="Double" />
+    <Property Name="DatePaid" Type="DateTime" Precision="3" />
+    <Property Name="DateTimeLastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUserId" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="CheckSalarySheet_Result">
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_Month" Nullable="true" />
+    <Property Type="Int32" Name="Salary_Year" Nullable="true" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="Int32" Name="Gross_Salary" Nullable="true" />
+    <Property Type="Double" Name="Days_Payable" Nullable="true" />
+    <Property Type="Double" Name="ESI_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="TDS" Nullable="true" />
+    <Property Type="Double" Name="Incentive" Nullable="true" />
+    <Property Type="Double" Name="Net_Payable" Nullable="true" />
+    <Property Type="DateTime" Name="DatePaid" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetDesignationDetail_Result">
+    <Property Type="Int32" Name="Designation_Id" Nullable="false" />
+    <Property Type="String" Name="Designation_Name" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetDesignationList_Result">
+    <Property Type="Int32" Name="Designation_Id" Nullable="false" />
+    <Property Type="String" Name="Designation_Name" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeDetail_Result">
+    <Property Type="Int32" Name="Employee_Id" Nullable="false" />
+    <Property Type="String" Name="Employee_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="First_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Father_s_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Mother_s_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Marital_Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Zip_Code" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="DOJ" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Emergency_Number" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Blood_Group" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="PAN_Card_Number" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Personal_Email_Id" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Official_Email_Id" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Skype_Id" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Designation_Id" Nullable="true" />
+    <Property Type="Int32" Name="Report_To__Manager_" Nullable="true" />
+    <Property Type="Boolean" Name="Is_Manager" Nullable="true" />
+    <Property Type="Boolean" Name="Is_Admin" Nullable="true" />
+    <Property Type="Int32" Name="Salary_At_Joining" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="DateTime" Name="Entry_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Employee_Id1" Nullable="true" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Salary_Amount" Nullable="true" />
+    <Property Type="DateTime" Name="Next_Due_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated1" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeList_Result">
+    <Property Type="Int32" Name="Employee_Id" Nullable="false" />
+    <Property Type="String" Name="Employee_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="First_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Father_s_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Mother_s_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Marital_Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Zip_Code" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="DOJ" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Emergency_Number" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Blood_Group" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="PAN_Card_Number" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Personal_Email_Id" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Official_Email_Id" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Skype_Id" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Designation_Id" Nullable="true" />
+    <Property Type="Int32" Name="Report_To__Manager_" Nullable="true" />
+    <Property Type="Boolean" Name="Is_Manager" Nullable="true" />
+    <Property Type="Boolean" Name="Is_Admin" Nullable="true" />
+    <Property Type="Int32" Name="Salary_At_Joining" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetManagerList_Result">
+    <Property Type="Int32" Name="Employee_Id" Nullable="false" />
+    <Property Type="String" Name="ECode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetSalaryDetail_Result">
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="DateTime" Name="Entry_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Salary_Amount" Nullable="true" />
+    <Property Type="DateTime" Name="Next_Due_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSalaryFormulasDetail_Result">
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Basic" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="HRA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Conveyance_Allowance" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Medical_Allowance" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Other_Allowance" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="EPF_Limit" Nullable="true" />
+    <Property Type="String" Name="EPF_Employee_Share" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EPF_Employer_Share" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EPF_Applicable_On" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="ESI_Limit" Nullable="true" />
+    <Property Type="String" Name="ESI_Employee_Share" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ESI_Employer_Share" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ESI_Applicable_On" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSalaryList_Result">
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="DateTime" Name="Entry_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Salary_Amount" Nullable="true" />
+    <Property Type="DateTime" Name="Next_Due_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSalarySheetDetail_Result">
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_Month" Nullable="true" />
+    <Property Type="Int32" Name="Salary_Year" Nullable="true" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="Int32" Name="Gross_Salary" Nullable="true" />
+    <Property Type="Double" Name="Days_Payable" Nullable="true" />
+    <Property Type="Double" Name="ESI_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="TDS" Nullable="true" />
+    <Property Type="Double" Name="Incentive" Nullable="true" />
+    <Property Type="Double" Name="Net_Payable" Nullable="true" />
+    <Property Type="DateTime" Name="DatePaid" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateTimeLastUpdated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LastUpdateUserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSalarySheetList_Result">
+    <Property Type="String" Name="First_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Employee_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Designation_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_Month" Nullable="true" />
+    <Property Type="Int32" Name="Salary_Year" Nullable="true" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="Int32" Name="Gross_Salary" Nullable="true" />
+    <Property Type="Double" Name="Days_Payable" Nullable="true" />
+    <Property Type="Double" Name="ESI_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="TDS" Nullable="true" />
+    <Property Type="Double" Name="Incentive" Nullable="true" />
+    <Property Type="Double" Name="Net_Payable" Nullable="true" />
+    <Property Type="DateTime" Name="DatePaid" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Basic_Salary" Nullable="true" />
+    <Property Type="Int32" Name="HRA" Nullable="true" />
+    <Property Type="Int32" Name="Conveyance_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Medical_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Other_Allowance" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSalarySheetReport_Result">
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Employee_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Salary_Month" Nullable="true" />
+    <Property Type="Int32" Name="Salary_Year" Nullable="true" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="Int32" Name="Gross_Salary" Nullable="true" />
+    <Property Type="Double" Name="Days_Payable" Nullable="true" />
+    <Property Type="Double" Name="ESI_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="TDS" Nullable="true" />
+    <Property Type="Double" Name="Incentive" Nullable="true" />
+    <Property Type="Double" Name="Net_Payable" Nullable="true" />
+    <Property Type="DateTime" Name="DatePaid" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Basic_Salary" Nullable="true" />
+    <Property Type="Int32" Name="HRA" Nullable="true" />
+    <Property Type="Int32" Name="Conveyance_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Medical_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Other_Allowance" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetUserInfo_Result">
+    <Property Type="String" Name="FName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="EId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SalaryReport_Result">
+    <Property Type="String" Name="First_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Employee_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Designation_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Entry_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_Month" Nullable="true" />
+    <Property Type="Int32" Name="Salary_Year" Nullable="true" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="true" />
+    <Property Type="Int32" Name="Gross_Salary" Nullable="true" />
+    <Property Type="Double" Name="Days_Payable" Nullable="true" />
+    <Property Type="Double" Name="ESI_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="TDS" Nullable="true" />
+    <Property Type="Double" Name="Incentive" Nullable="true" />
+    <Property Type="Double" Name="Net_Payable" Nullable="true" />
+    <Property Type="String" Name="DatePaid" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Basic_Salary" Nullable="true" />
+    <Property Type="Int32" Name="HRA" Nullable="true" />
+    <Property Type="Int32" Name="Conveyance_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Medical_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Other_Allowance" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spSalarySheet_Result">
+    <Property Type="String" Name="First_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Employee_Id" Nullable="false" />
+    <Property Type="String" Name="Employee_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Designation_Name" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Total_Days" Nullable="true" />
+    <Property Type="Int32" Name="Salary_Amount" Nullable="true" />
+    <Property Type="Int32" Name="Employee_Id1" Nullable="true" />
+    <Property Type="Int32" Name="Basic_Salary" Nullable="true" />
+    <Property Type="Int32" Name="HRA" Nullable="true" />
+    <Property Type="Int32" Name="Conveyance_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Medical_Allowance" Nullable="true" />
+    <Property Type="Int32" Name="Other_Allowance" Nullable="true" />
+    <Property Type="Double" Name="EPF_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="EPF_EY_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EE_Share" Nullable="true" />
+    <Property Type="Double" Name="ESI_EY_Share" Nullable="true" />
+  </ComplexType>
+</Schema>

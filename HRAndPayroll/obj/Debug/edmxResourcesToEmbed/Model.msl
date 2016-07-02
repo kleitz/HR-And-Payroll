@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRAndPayroll_TestModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Designation_Masters">
+      <EntityTypeMapping TypeName="HRAndPayroll_TestModel.Designation_Master">
+        <MappingFragment StoreEntitySet="Designation Master">
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation Id" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Masters">
+      <EntityTypeMapping TypeName="HRAndPayroll_TestModel.Employee_Master">
+        <MappingFragment StoreEntitySet="Employee Master">
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Father_s_Name" ColumnName="Father's Name" />
+          <ScalarProperty Name="Mother_s_Name" ColumnName="Mother's Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital Status" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip_Code" ColumnName="Zip Code" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile Number" />
+          <ScalarProperty Name="Emergency_Number" ColumnName="Emergency Number" />
+          <ScalarProperty Name="Blood_Group" ColumnName="Blood Group" />
+          <ScalarProperty Name="PAN_Card_Number" ColumnName="PAN Card Number" />
+          <ScalarProperty Name="Personal_Email_Id" ColumnName="Personal Email Id" />
+          <ScalarProperty Name="Official_Email_Id" ColumnName="Official Email Id" />
+          <ScalarProperty Name="Skype_Id" ColumnName="Skype Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation Id" />
+          <ScalarProperty Name="Report_To__Manager_" ColumnName="Report To (Manager)" />
+          <ScalarProperty Name="Is_Manager" ColumnName="Is Manager" />
+          <ScalarProperty Name="Is_Admin" ColumnName="Is Admin" />
+          <ScalarProperty Name="Salary_At_Joining" ColumnName="Salary At Joining" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salary_Formulas">
+      <EntityTypeMapping TypeName="HRAndPayroll_TestModel.Salary_Formula">
+        <MappingFragment StoreEntitySet="Salary Formulas">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Basic" ColumnName="Basic" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Conveyance_Allowance" ColumnName="Conveyance Allowance" />
+          <ScalarProperty Name="Medical_Allowance" ColumnName="Medical Allowance" />
+          <ScalarProperty Name="Other_Allowance" ColumnName="Other Allowance" />
+          <ScalarProperty Name="EPF_Limit" ColumnName="EPF Limit" />
+          <ScalarProperty Name="EPF_Employee_Share" ColumnName="EPF Employee Share" />
+          <ScalarProperty Name="EPF_Employer_Share" ColumnName="EPF Employer Share" />
+          <ScalarProperty Name="EPF_Applicable_On" ColumnName="EPF Applicable On" />
+          <ScalarProperty Name="ESI_Limit" ColumnName="ESI Limit" />
+          <ScalarProperty Name="ESI_Employee_Share" ColumnName="ESI Employee Share" />
+          <ScalarProperty Name="ESI_Employer_Share" ColumnName="ESI Employer Share" />
+          <ScalarProperty Name="ESI_Applicable_On" ColumnName="ESI Applicable On" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salary_Masters">
+      <EntityTypeMapping TypeName="HRAndPayroll_TestModel.Salary_Master">
+        <MappingFragment StoreEntitySet="Salary Master">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry Date" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Salary_Amount" ColumnName="Salary Amount" />
+          <ScalarProperty Name="Next_Due_Date" ColumnName="Next Due Date" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salary_Sheets">
+      <EntityTypeMapping TypeName="HRAndPayroll_TestModel.Salary_Sheet">
+        <MappingFragment StoreEntitySet="Salary Sheet">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Salary_Month" ColumnName="Salary Month" />
+          <ScalarProperty Name="Salary_Year" ColumnName="Salary Year" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross Salary" />
+          <ScalarProperty Name="Days_Payable" ColumnName="Days Payable" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Net_Payable" ColumnName="Net Payable" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddOrUpdateDesignation" FunctionName="HRAndPayroll_TestModel.Store.AddOrUpdateDesignation" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateEmployee" FunctionName="HRAndPayroll_TestModel.Store.AddOrUpdateEmployee" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateSalary" FunctionName="HRAndPayroll_TestModel.Store.AddOrUpdateSalary" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateSalaryFormulas" FunctionName="HRAndPayroll_TestModel.Store.AddOrUpdateSalaryFormulas" />
+    <FunctionImportMapping FunctionImportName="AddOrUpdateSalarySheet" FunctionName="HRAndPayroll_TestModel.Store.AddOrUpdateSalarySheet" />
+    <FunctionImportMapping FunctionImportName="CheckSalarySheet" FunctionName="HRAndPayroll_TestModel.Store.CheckSalarySheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.CheckSalarySheet_Result">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Salary_Month" ColumnName="Salary Month" />
+          <ScalarProperty Name="Salary_Year" ColumnName="Salary Year" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross Salary" />
+          <ScalarProperty Name="Days_Payable" ColumnName="Days Payable" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Net_Payable" ColumnName="Net Payable" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CheckUser" FunctionName="HRAndPayroll_TestModel.Store.CheckUser" />
+    <FunctionImportMapping FunctionImportName="DeactivateEmployee" FunctionName="HRAndPayroll_TestModel.Store.DeactivateEmployee" />
+    <FunctionImportMapping FunctionImportName="DeleteDesignation" FunctionName="HRAndPayroll_TestModel.Store.DeleteDesignation" />
+    <FunctionImportMapping FunctionImportName="DeleteEmployee" FunctionName="HRAndPayroll_TestModel.Store.DeleteEmployee" />
+    <FunctionImportMapping FunctionImportName="DeleteSalary" FunctionName="HRAndPayroll_TestModel.Store.DeleteSalary" />
+    <FunctionImportMapping FunctionImportName="DeleteSalaryFormulas" FunctionName="HRAndPayroll_TestModel.Store.DeleteSalaryFormulas" />
+    <FunctionImportMapping FunctionImportName="DeleteSalarySheet" FunctionName="HRAndPayroll_TestModel.Store.DeleteSalarySheet" />
+    <FunctionImportMapping FunctionImportName="GetDesignationDetail" FunctionName="HRAndPayroll_TestModel.Store.GetDesignationDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetDesignationDetail_Result">
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation Id" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDesignationList" FunctionName="HRAndPayroll_TestModel.Store.GetDesignationList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetDesignationList_Result">
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation Id" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployee" FunctionName="HRAndPayroll_TestModel.Store.GetEmployee" />
+    <FunctionImportMapping FunctionImportName="GetEmployeeDetail" FunctionName="HRAndPayroll_TestModel.Store.GetEmployeeDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetEmployeeDetail_Result">
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Father_s_Name" ColumnName="Father's Name" />
+          <ScalarProperty Name="Mother_s_Name" ColumnName="Mother's Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital Status" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip_Code" ColumnName="Zip Code" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile Number" />
+          <ScalarProperty Name="Emergency_Number" ColumnName="Emergency Number" />
+          <ScalarProperty Name="Blood_Group" ColumnName="Blood Group" />
+          <ScalarProperty Name="PAN_Card_Number" ColumnName="PAN Card Number" />
+          <ScalarProperty Name="Personal_Email_Id" ColumnName="Personal Email Id" />
+          <ScalarProperty Name="Official_Email_Id" ColumnName="Official Email Id" />
+          <ScalarProperty Name="Skype_Id" ColumnName="Skype Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation Id" />
+          <ScalarProperty Name="Report_To__Manager_" ColumnName="Report To (Manager)" />
+          <ScalarProperty Name="Is_Manager" ColumnName="Is Manager" />
+          <ScalarProperty Name="Is_Admin" ColumnName="Is Admin" />
+          <ScalarProperty Name="Salary_At_Joining" ColumnName="Salary At Joining" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry Date" />
+          <ScalarProperty Name="Employee_Id1" ColumnName="Employee Id1" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Salary_Amount" ColumnName="Salary Amount" />
+          <ScalarProperty Name="Next_Due_Date" ColumnName="Next Due Date" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DateTimeLastUpdated1" ColumnName="DateTimeLastUpdated1" />
+          <ScalarProperty Name="LastUpdateUserId1" ColumnName="LastUpdateUserId1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeeList" FunctionName="HRAndPayroll_TestModel.Store.GetEmployeeList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetEmployeeList_Result">
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Father_s_Name" ColumnName="Father's Name" />
+          <ScalarProperty Name="Mother_s_Name" ColumnName="Mother's Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital Status" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip_Code" ColumnName="Zip Code" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile Number" />
+          <ScalarProperty Name="Emergency_Number" ColumnName="Emergency Number" />
+          <ScalarProperty Name="Blood_Group" ColumnName="Blood Group" />
+          <ScalarProperty Name="PAN_Card_Number" ColumnName="PAN Card Number" />
+          <ScalarProperty Name="Personal_Email_Id" ColumnName="Personal Email Id" />
+          <ScalarProperty Name="Official_Email_Id" ColumnName="Official Email Id" />
+          <ScalarProperty Name="Skype_Id" ColumnName="Skype Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation Id" />
+          <ScalarProperty Name="Report_To__Manager_" ColumnName="Report To (Manager)" />
+          <ScalarProperty Name="Is_Manager" ColumnName="Is Manager" />
+          <ScalarProperty Name="Is_Admin" ColumnName="Is Admin" />
+          <ScalarProperty Name="Salary_At_Joining" ColumnName="Salary At Joining" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetManagerList" FunctionName="HRAndPayroll_TestModel.Store.GetManagerList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetManagerList_Result">
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="ECode" ColumnName="ECode" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMiniEmployeeDetail" FunctionName="HRAndPayroll_TestModel.Store.GetMiniEmployeeDetail" />
+    <FunctionImportMapping FunctionImportName="GetSalaryDetail" FunctionName="HRAndPayroll_TestModel.Store.GetSalaryDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetSalaryDetail_Result">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry Date" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Salary_Amount" ColumnName="Salary Amount" />
+          <ScalarProperty Name="Next_Due_Date" ColumnName="Next Due Date" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalaryFormulasDetail" FunctionName="HRAndPayroll_TestModel.Store.GetSalaryFormulasDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetSalaryFormulasDetail_Result">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Basic" ColumnName="Basic" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Conveyance_Allowance" ColumnName="Conveyance Allowance" />
+          <ScalarProperty Name="Medical_Allowance" ColumnName="Medical Allowance" />
+          <ScalarProperty Name="Other_Allowance" ColumnName="Other Allowance" />
+          <ScalarProperty Name="EPF_Limit" ColumnName="EPF Limit" />
+          <ScalarProperty Name="EPF_Employee_Share" ColumnName="EPF Employee Share" />
+          <ScalarProperty Name="EPF_Employer_Share" ColumnName="EPF Employer Share" />
+          <ScalarProperty Name="EPF_Applicable_On" ColumnName="EPF Applicable On" />
+          <ScalarProperty Name="ESI_Limit" ColumnName="ESI Limit" />
+          <ScalarProperty Name="ESI_Employee_Share" ColumnName="ESI Employee Share" />
+          <ScalarProperty Name="ESI_Employer_Share" ColumnName="ESI Employer Share" />
+          <ScalarProperty Name="ESI_Applicable_On" ColumnName="ESI Applicable On" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalaryFormulasList" FunctionName="HRAndPayroll_TestModel.Store.GetSalaryFormulasList" />
+    <FunctionImportMapping FunctionImportName="GetSalaryList" FunctionName="HRAndPayroll_TestModel.Store.GetSalaryList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetSalaryList_Result">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry Date" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Salary_Amount" ColumnName="Salary Amount" />
+          <ScalarProperty Name="Next_Due_Date" ColumnName="Next Due Date" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalarySearchList" FunctionName="HRAndPayroll_TestModel.Store.GetSalarySearchList" />
+    <FunctionImportMapping FunctionImportName="GetSalarySheetDetail" FunctionName="HRAndPayroll_TestModel.Store.GetSalarySheetDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetSalarySheetDetail_Result">
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Salary_Month" ColumnName="Salary Month" />
+          <ScalarProperty Name="Salary_Year" ColumnName="Salary Year" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross Salary" />
+          <ScalarProperty Name="Days_Payable" ColumnName="Days Payable" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Net_Payable" ColumnName="Net Payable" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="DateTimeLastUpdated" ColumnName="DateTimeLastUpdated" />
+          <ScalarProperty Name="LastUpdateUserId" ColumnName="LastUpdateUserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalarySheetList" FunctionName="HRAndPayroll_TestModel.Store.GetSalarySheetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetSalarySheetList_Result">
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Salary_Month" ColumnName="Salary Month" />
+          <ScalarProperty Name="Salary_Year" ColumnName="Salary Year" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross Salary" />
+          <ScalarProperty Name="Days_Payable" ColumnName="Days Payable" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Net_Payable" ColumnName="Net Payable" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="Basic_Salary" ColumnName="Basic Salary" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Conveyance_Allowance" ColumnName="Conveyance Allowance" />
+          <ScalarProperty Name="Medical_Allowance" ColumnName="Medical Allowance" />
+          <ScalarProperty Name="Other_Allowance" ColumnName="Other Allowance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalarySheetReport" FunctionName="HRAndPayroll_TestModel.Store.GetSalarySheetReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetSalarySheetReport_Result">
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="Salary_Month" ColumnName="Salary Month" />
+          <ScalarProperty Name="Salary_Year" ColumnName="Salary Year" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross Salary" />
+          <ScalarProperty Name="Days_Payable" ColumnName="Days Payable" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Net_Payable" ColumnName="Net Payable" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="Basic_Salary" ColumnName="Basic Salary" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Conveyance_Allowance" ColumnName="Conveyance Allowance" />
+          <ScalarProperty Name="Medical_Allowance" ColumnName="Medical Allowance" />
+          <ScalarProperty Name="Other_Allowance" ColumnName="Other Allowance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserInfo" FunctionName="HRAndPayroll_TestModel.Store.GetUserInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.GetUserInfo_Result">
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="EId" ColumnName="EId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SalaryReport" FunctionName="HRAndPayroll_TestModel.Store.SalaryReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.SalaryReport_Result">
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="Entry_Id" ColumnName="Entry Id" />
+          <ScalarProperty Name="Salary_Month" ColumnName="Salary Month" />
+          <ScalarProperty Name="Salary_Year" ColumnName="Salary Year" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross Salary" />
+          <ScalarProperty Name="Days_Payable" ColumnName="Days Payable" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+          <ScalarProperty Name="Net_Payable" ColumnName="Net Payable" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="Basic_Salary" ColumnName="Basic Salary" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Conveyance_Allowance" ColumnName="Conveyance Allowance" />
+          <ScalarProperty Name="Medical_Allowance" ColumnName="Medical Allowance" />
+          <ScalarProperty Name="Other_Allowance" ColumnName="Other Allowance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSalarySheet" FunctionName="HRAndPayroll_TestModel.Store.spSalarySheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRAndPayroll_TestModel.spSalarySheet_Result">
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee Id" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee Code" />
+          <ScalarProperty Name="Designation_Name" ColumnName="Designation Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start Date" />
+          <ScalarProperty Name="Total_Days" ColumnName="Total Days" />
+          <ScalarProperty Name="Salary_Amount" ColumnName="Salary Amount" />
+          <ScalarProperty Name="Employee_Id1" ColumnName="Employee Id1" />
+          <ScalarProperty Name="Basic_Salary" ColumnName="Basic Salary" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Conveyance_Allowance" ColumnName="Conveyance Allowance" />
+          <ScalarProperty Name="Medical_Allowance" ColumnName="Medical Allowance" />
+          <ScalarProperty Name="Other_Allowance" ColumnName="Other Allowance" />
+          <ScalarProperty Name="EPF_EE_Share" ColumnName="EPF EE Share" />
+          <ScalarProperty Name="EPF_EY_Share" ColumnName="EPF EY Share" />
+          <ScalarProperty Name="ESI_EE_Share" ColumnName="ESI EE Share" />
+          <ScalarProperty Name="ESI_EY_Share" ColumnName="ESI EY Share" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateDatePaid" FunctionName="HRAndPayroll_TestModel.Store.UpdateDatePaid" />
+  </EntityContainerMapping>
+</Mapping>

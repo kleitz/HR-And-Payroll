@@ -1,0 +1,48 @@
+﻿@model HRAndPayroll.Models.salarySheet
+@{
+    ViewBag.Title = "Reports";
+    HtmlHelper.ClientValidationEnabled = false;
+}
+@section Scripts {
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/css/StyleSheet.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Start_Date, #Next_Due_Date').datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+        });
+    </script>
+
+}
+
+@using (Html.BeginForm("PaySlipReport", "Reports"))
+{ 
+    <div class="heading" style="padding-bottom:5px;">
+        Generate Reports &nbsp;        
+        <div style="float: right; padding-right: 30px;">
+            <input type="submit" name="Action" value="Download PDF"  Class="Download-btn"  />&nbsp;
+            <input type="submit" name="Action" value="Download Word"  Class="Download-btn"  />
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="divheight1">
+        <div class="innerform mT20 ">
+
+            @Html.Partial("ReportPage")
+
+            @*<a href="@Url.Action("PaySlipReport", "Reports", new { Id = "PDF" })" ><img src="../Content/images/preview-icon.png" style="border:none;" /></a>
+           *@ @*<div style="padding: 10px; border: 1px solid black">
+                <div><a href="@Url.Action("PaySlipReport","Reports", new { id = "PDF" })">Get Report PDF</a></div>
+                <div><a href="@Url.Action("PaySlipReport", new { id = "Excel" })">Get Report Excel</a></div>
+                <div><a href="@Url.Action("PaySlipReport", new { id = "Word" })">Get Report Word</a></div>
+                <div><a href="@Url.Action("PaySlipReport", new { id = "Image" })">Get Report Image</a></div>
+            </div>*@
+        </div>
+    </div>
+}

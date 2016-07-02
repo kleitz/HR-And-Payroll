@@ -1,0 +1,182 @@
+﻿@model HRAndPayroll.Salary_Formula
+
+@{
+    ViewBag.Title = "AddFormulae";
+}
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem { Text = "BASIC", Value = "BASIC" });
+    listItems.Add(new SelectListItem { Text = "GROSS", Value = "GROSS" });   
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Start_Date').datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+
+        });
+    </script>
+
+}
+
+@using (Html.BeginForm("AddFormulae", "SalaryFormulae", FormMethod.Post))
+{       
+    <div class="heading">
+        Salary Formulae
+       @* @Html.DisplayForModel()*@
+        @*@Html.HiddenFor(Model => Model.Entry_Id)*@
+    </div>
+    <div class="divheight1">
+        <div class="innerform mT20 ">
+            <table class="mainTable">
+                @*<tr>
+                    <td style="color:red;font-size:15px;font-family:'Century Schoolbook';">@ViewBag.save</td>
+                </tr>*@
+                <tr>
+                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>Start date : 
+                        @*<input type="text" id="date" />*@
+                        @Html.TextBoxFor(Model=>Model.Start_Date,"{0:dd/MM/yyyy}", new { @class="txtBox", @placeholder = "dd/mm/yyyy", @readonly = "true"})
+                        @Html.ValidationMessageFor(Model => Model.Start_Date)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset class="Fieldset1">
+                            <legend>Salary Breakup</legend>
+                            <table class="tbmain">
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.Basic) (%) :
+                                    </td>
+                                    <td>@Html.TextBoxFor(Model => Model.Basic, new { @class = "txtBox", @placeholder = "Basic" })
+                                        @Html.ValidationMessageFor(Model => Model.Basic)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.HRA) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.HRA, new { @class = "txtBox", @placeholder = "House Rent Allowance" })
+                                        @Html.ValidationMessageFor(Model => Model.HRA)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.Conveyance_Allowance) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.Conveyance_Allowance, new { @class = "txtBox", @placeholder = "Conveyance Allowance" })
+                                        @Html.ValidationMessageFor(Model => Model.Conveyance_Allowance)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.Medical_Allowance) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.Medical_Allowance, new { @class = "txtBox", @placeholder = "Medical Allowance" })
+                                        @Html.ValidationMessageFor(Model => Model.Medical_Allowance)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name">&nbsp;&nbsp;@Html.LabelFor(Model => Model.Other_Allowance) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.Other_Allowance, new { @class = "txtBox", @placeholder = "Other Allowance" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset class="Fieldset1">
+                            <legend>EPF</legend>
+                            <table class="tbmain">
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.EPF_Limit) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.EPF_Limit, new { @class = "txtBox", @placeholder = "EPF Limit" })
+                                        @Html.ValidationMessageFor(Model => Model.EPF_Limit)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.EPF_Employee_Share) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.EPF_Employee_Share, new { @class = "txtBox", @placeholder = "EPF Employee Share" })
+                                        @Html.ValidationMessageFor(Model => Model.EPF_Employee_Share)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.EPF_Employer_Share) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.EPF_Employer_Share, new { @class = "txtBox", @placeholder = "EPF Employer Share" })
+                                        @Html.ValidationMessageFor(Model => Model.EPF_Employer_Share)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.EPF_Applicable_On) (%) :</td>
+                                    <td>@Html.DropDownListFor(Model => Model.EPF_Applicable_On, listItems, "--Select--", new { @class = "ddl" })
+                                        @Html.ValidationMessageFor(Model => Model.EPF_Applicable_On)
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset class="Fieldset1">
+                            <legend>ESI</legend>
+                            <table class="tbmain">
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.ESI_Limit) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.ESI_Limit, new { @class = "txtBox", @placeholder = "ESI Limit" })
+                                        @Html.ValidationMessageFor(Model => Model.ESI_Limit)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.ESI_Employee_Share) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.ESI_Employee_Share, new { @class = "txtBox", @placeholder = "ESI Employee Share" })
+                                        @Html.ValidationMessageFor(Model => Model.ESI_Employee_Share)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.ESI_Employer_Share) (%) :</td>
+                                    <td>@Html.TextBoxFor(Model => Model.ESI_Employer_Share, new { @class = "txtBox", @placeholder = "ESI Employer Share" })
+                                        @Html.ValidationMessageFor(Model => Model.ESI_Employer_Share)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-name"><span class="Star-clr"><strong>* </strong></span>
+                                        @Html.LabelFor(Model => Model.ESI_Applicable_On) (%) :</td>
+                                    <td>@Html.DropDownListFor(Model => Model.ESI_Applicable_On, listItems, "--Select--", new { @class = "ddl" })
+                                        @Html.ValidationMessageFor(Model => Model.ESI_Applicable_On)
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @*name attribute of submit button should match action/method name*@
+                        <input type="submit" name="Action" value='@ViewBag.btn' class="submit-btn" />
+                        <input type="submit" name="Action" value="Cancel" class="cancel-btn cancel" />@*onclick="document.location.href('SalaryFormulae/AddFormulae')"*@
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+}
+
+

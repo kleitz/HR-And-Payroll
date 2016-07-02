@@ -1,0 +1,106 @@
+﻿@model HRAndPayroll.Employee_Master
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="~/Content/css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+    <title>Login | Ameba Technologies</title>
+    <meta name="viewport" content="width=device-width" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    
+</head>
+<body>
+    
+    @using (Html.BeginForm("", "", FormMethod.Post))
+    {
+        //this  is for create form tag
+        @Html.AntiForgeryToken()          // this is for prevent CSRF attack
+        @Html.ValidationSummary(true)
+        if (@ViewBag.Message != null)
+        {
+        <div style="border: 1px solid red">
+            @ViewBag.Message            
+        </div>
+        }
+        <div id="wrapper">
+            <div class="loginbg">
+                <div class="login_contr">
+                    <div class="company-name">
+                        Ameba Technologies Pvt Ltd
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="login-info">
+                        Please log in to your account
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="login_lt mT10">
+                    </div>
+                    <div class="logi-rt mT10">
+                        <div class="login_inner">
+                            <table class="mT20">
+                                <tr>
+                                    <td><span id="lblUname" class="login_lable">User Name</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="color:red;">                                        
+                                        @Html.TextBoxFor(model => model.Employee_Code, new { @class = "login_textfield" })
+                                        @Html.ValidationMessageFor(model => model.Employee_Code)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span id="Lblpass" class="login_lable">Password</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:red;">
+                                        @Html.PasswordFor(Model=>Model.Password,new { @class = "login_textfield" })
+                                        @Html.ValidationMessageFor(model=>model.Password)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                         <input id="Chkbox" name="Check" value="true" type="checkbox" checked /> Remember Me
+                                    </td>
+                                </tr>
+                                <tr class="login-button">
+                                    <td>
+                                        <input type="image" src="~/Content/images/login-btn.png" alt="Login" >
+                                        @*<a href='@Url.Action("Home", "Dashboard")'>
+                                            <img src='@Url.Content("~/Content/images/login-btn.png")' />
+                                        </a>*@
+                                        @*<a href='@Url.Action("Login", "Account")'>Forget Password</a>*@
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                    
+                                    </td></tr>
+                            </table>
+                            
+
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div id="footer_bg">
+                <div style="text-align: center">
+                    <br>
+                    Plot No. F-452, 3rd Floor, Industrial Area, Phase 8B, Mohali, India &ndash; 160071
+                <br />
+                    &copy; 2015 Ameba Technologies Pvt Ltd
+                <br />
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

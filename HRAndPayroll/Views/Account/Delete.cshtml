@@ -1,0 +1,229 @@
+﻿@model HRAndPayroll.Employee_Master
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Employee_Master</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Employee_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Employee_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Last_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Last_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Father_s_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Father_s_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mother_s_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mother_s_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Marital_Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Marital_Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Zip_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Zip_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DOJ)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOJ)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DOB)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOB)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mobile_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mobile_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Emergency_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Emergency_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Blood_Group)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Blood_Group)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PAN_Card_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PAN_Card_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Personal_Email_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Personal_Email_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Official_Email_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Official_Email_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Skype_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Skype_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Designation_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designation_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Report_To__Manager_)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Report_To__Manager_)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Manager)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Manager)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Admin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Admin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Salary_At_Joining)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Salary_At_Joining)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateTimeLastUpdated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateTimeLastUpdated)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastUpdateUserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastUpdateUserId)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

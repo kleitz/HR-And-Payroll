@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRAndPayroll_TestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HRAndPayroll_TestModelStoreContainer">
+    <EntitySet Name="Designation Master" EntityType="HRAndPayroll_TestModel.Store.Designation Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee Master" EntityType="HRAndPayroll_TestModel.Store.Employee Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Salary Formulas" EntityType="HRAndPayroll_TestModel.Store.Salary Formulas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Salary Master" EntityType="HRAndPayroll_TestModel.Store.Salary Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Salary Sheet" EntityType="HRAndPayroll_TestModel.Store.Salary Sheet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Designation Master">
+    <Key>
+      <PropertyRef Name="Designation Id" />
+    </Key>
+    <Property Name="Designation Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Designation Name" Type="varchar" MaxLength="100" />
+    <Property Name="DateTimeLastUpdated" Type="datetime" />
+    <Property Name="LastUpdateUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee Master">
+    <Key>
+      <PropertyRef Name="Employee Id" />
+    </Key>
+    <Property Name="Employee Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Employee Code" Type="varchar" MaxLength="50" />
+    <Property Name="First Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last Name" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="Father's Name" Type="varchar" MaxLength="100" />
+    <Property Name="Mother's Name" Type="varchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="Marital Status" Type="varchar" MaxLength="10" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Zip Code" Type="varchar" MaxLength="10" />
+    <Property Name="DOJ" Type="datetime" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Mobile Number" Type="varchar" MaxLength="30" />
+    <Property Name="Emergency Number" Type="varchar" MaxLength="30" />
+    <Property Name="Blood Group" Type="varchar" MaxLength="5" />
+    <Property Name="PAN Card Number" Type="varchar" MaxLength="20" />
+    <Property Name="Personal Email Id" Type="varchar" MaxLength="100" />
+    <Property Name="Official Email Id" Type="varchar" MaxLength="100" />
+    <Property Name="Skype Id" Type="varchar" MaxLength="50" />
+    <Property Name="Designation Id" Type="int" />
+    <Property Name="Report To (Manager)" Type="int" />
+    <Property Name="Is Manager" Type="bit" />
+    <Property Name="Is Admin" Type="bit" />
+    <Property Name="Salary At Joining" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="DateTimeLastUpdated" Type="datetime" />
+    <Property Name="LastUpdateUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Salary Formulas">
+    <Key>
+      <PropertyRef Name="Entry Id" />
+    </Key>
+    <Property Name="Entry Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Start Date" Type="datetime" />
+    <Property Name="Basic" Type="varchar" MaxLength="10" />
+    <Property Name="HRA" Type="varchar" MaxLength="10" />
+    <Property Name="Conveyance Allowance" Type="varchar" MaxLength="10" />
+    <Property Name="Medical Allowance" Type="varchar" MaxLength="10" />
+    <Property Name="Other Allowance" Type="varchar" MaxLength="10" />
+    <Property Name="EPF Limit" Type="int" />
+    <Property Name="EPF Employee Share" Type="varchar" MaxLength="10" />
+    <Property Name="EPF Employer Share" Type="varchar" MaxLength="10" />
+    <Property Name="EPF Applicable On" Type="varchar" MaxLength="10" />
+    <Property Name="ESI Limit" Type="int" />
+    <Property Name="ESI Employee Share" Type="varchar" MaxLength="10" />
+    <Property Name="ESI Employer Share" Type="varchar" MaxLength="10" />
+    <Property Name="ESI Applicable On" Type="varchar" MaxLength="10" />
+    <Property Name="DateTimeLastUpdated" Type="datetime" />
+    <Property Name="LastUpdateUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Salary Master">
+    <Key>
+      <PropertyRef Name="Entry Id" />
+    </Key>
+    <Property Name="Entry Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Entry Date" Type="datetime" />
+    <Property Name="Employee Id" Type="int" />
+    <Property Name="Start Date" Type="datetime" />
+    <Property Name="Salary Amount" Type="int" />
+    <Property Name="Next Due Date" Type="datetime" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="DateTimeLastUpdated" Type="datetime" />
+    <Property Name="LastUpdateUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Salary Sheet">
+    <Key>
+      <PropertyRef Name="Entry Id" />
+    </Key>
+    <Property Name="Entry Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Salary Month" Type="int" />
+    <Property Name="Salary Year" Type="int" />
+    <Property Name="Employee Id" Type="int" />
+    <Property Name="Gross Salary" Type="int" />
+    <Property Name="Days Payable" Type="float" />
+    <Property Name="ESI EE Share" Type="float" />
+    <Property Name="ESI EY Share" Type="float" />
+    <Property Name="EPF EE Share" Type="float" />
+    <Property Name="EPF EY Share" Type="float" />
+    <Property Name="TDS" Type="float" />
+    <Property Name="Incentive" Type="float" />
+    <Property Name="Net Payable" Type="float" />
+    <Property Name="DatePaid" Type="datetime" />
+    <Property Name="DateTimeLastUpdated" Type="datetime" />
+    <Property Name="LastUpdateUserId" Type="int" />
+  </EntityType>
+  <Function Name="AddOrUpdateDesignation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DesignationId" Type="int" Mode="In" />
+    <Parameter Name="DesignationName" Type="varchar" Mode="In" />
+    <Parameter Name="DateTimeLastUpdated" Type="datetime" Mode="In" />
+    <Parameter Name="LastUpdateUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddOrUpdateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="EmployeeCode" Type="varchar" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="FatherName" Type="varchar" Mode="In" />
+    <Parameter Name="MotherName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="MaritalStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar(max)" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="DOJ" Type="datetime" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+    <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+    <Parameter Name="EmergencyNo" Type="varchar" Mode="In" />
+    <Parameter Name="BloodGroup" Type="varchar" Mode="In" />
+    <Parameter Name="PANCardNo" Type="varchar" Mode="In" />
+    <Parameter Name="PersonalEmailId" Type="varchar" Mode="In" />
+    <Parameter Name="OfficialEmailId" Type="varchar" Mode="In" />
+    <Parameter Name="SkypeId" Type="varchar" Mode="In" />
+    <Parameter Name="DesignationId" Type="int" Mode="In" />
+    <Parameter Name="ReportToManager" Type="int" Mode="In" />
+    <Parameter Name="IsManager" Type="bit" Mode="In" />
+    <Parameter Name="IsAdmin" Type="bit" Mode="In" />
+    <Parameter Name="SalaryAtJoining" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="DateTimeLastUpdated" Type="datetime" Mode="In" />
+    <Parameter Name="LastUpdateUserId" Type="int" Mode="In" />
+    <Parameter Name="NextDueDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddOrUpdateSalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+    <Parameter Name="EntryDate" Type="datetime" Mode="In" />
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="SalaryAmount" Type="int" Mode="In" />
+    <Parameter Name="NextDueDate" Type="datetime" Mode="In" />
+    <Parameter Name="Remarks" Type="varchar(max)" Mode="In" />
+    <Parameter Name="DateTimeLastUpdated" Type="datetime" Mode="In" />
+    <Parameter Name="LastUpdateUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddOrUpdateSalaryFormulas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="Basic" Type="varchar" Mode="In" />
+    <Parameter Name="HRA" Type="varchar" Mode="In" />
+    <Parameter Name="ConveyanceAllowance" Type="varchar" Mode="In" />
+    <Parameter Name="MedicalAllowance" Type="varchar" Mode="In" />
+    <Parameter Name="OtherAllowance" Type="varchar" Mode="In" />
+    <Parameter Name="EPFLimit" Type="varchar" Mode="In" />
+    <Parameter Name="EPFEmployeeShare" Type="varchar" Mode="In" />
+    <Parameter Name="EPFEmployerShare" Type="varchar" Mode="In" />
+    <Parameter Name="EPFApplicableOn" Type="varchar" Mode="In" />
+    <Parameter Name="ESILimit" Type="varchar" Mode="In" />
+    <Parameter Name="ESIEmployeeShare" Type="varchar" Mode="In" />
+    <Parameter Name="ESIEmployerShare" Type="varchar" Mode="In" />
+    <Parameter Name="ESIApplicableOn" Type="varchar" Mode="In" />
+    <Parameter Name="DateTimeLastUpdated" Type="datetime" Mode="In" />
+    <Parameter Name="LastUpdateUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddOrUpdateSalarySheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+    <Parameter Name="SalaryMonth" Type="int" Mode="In" />
+    <Parameter Name="SalaryYear" Type="int" Mode="In" />
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="GrossSalary" Type="int" Mode="In" />
+    <Parameter Name="DaysPayable" Type="float" Mode="In" />
+    <Parameter Name="ESIEmployeeShare" Type="float" Mode="In" />
+    <Parameter Name="ESIEmployerShare" Type="float" Mode="In" />
+    <Parameter Name="EPFEmployeeShare" Type="float" Mode="In" />
+    <Parameter Name="EPFEmployerShare" Type="float" Mode="In" />
+    <Parameter Name="TDS" Type="float" Mode="In" />
+    <Parameter Name="Incentive" Type="float" Mode="In" />
+    <Parameter Name="NetPayable" Type="float" Mode="In" />
+    <Parameter Name="DateTimeLastUpdated" Type="datetime" Mode="In" />
+    <Parameter Name="LastUpdateUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CheckSalarySheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SalaryMonth" Type="int" Mode="In" />
+    <Parameter Name="SalaryYear" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CheckUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeCode" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeactivateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpCode" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="DeleteDesignation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DesignationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSalaryFormulas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSalarySheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDesignationDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DesignationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDesignationList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeeDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeeList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetManagerList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMiniEmployeeDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpCode" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeId" Type="varchar" Mode="In" />
+    <Parameter Name="ManagerEmployeeId" Type="varchar" Mode="In" />
+    <Parameter Name="DesignationId" Type="varchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetSalaryDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSalaryFormulasDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSalaryFormulasList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="Basic" Type="varchar" Mode="In" />
+    <Parameter Name="HRA" Type="varchar" Mode="In" />
+    <Parameter Name="ConveyanceAllowance" Type="varchar" Mode="In" />
+    <Parameter Name="MedicalAllowance" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetSalaryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSalarySearchList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EmpName" Type="varchar" Mode="In" />
+    <Parameter Name="SalaryAmt" Type="varchar" Mode="In" />
+    <Parameter Name="nextDueDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetSalarySheetDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSalarySheetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SalaryYear" Type="int" Mode="In" />
+    <Parameter Name="SalaryMonth" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSalarySheetReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SalaryReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SalaryYear" Type="int" Mode="In" />
+    <Parameter Name="SalaryMonth" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSalarySheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UpdateDatePaid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="DatePaid" Type="datetime" Mode="In" />
+  </Function>
+</Schema>

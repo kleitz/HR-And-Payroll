@@ -1,0 +1,141 @@
+﻿@*@model HRAndPayroll.Salary_Formula*@
+@using HRAndPayroll.Models
+
+@{
+    ViewBag.Title = "Salary Formulae";
+    HtmlHelper.ClientValidationEnabled = false;
+}
+@{
+    
+    ViewBag.Title = "ViewFormulae";
+    var grid = new WebGrid(Model.myFormulae, canPage: true, rowsPerPage: 10, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+    grid.Pager(WebGridPagerModes.NextPrevious);
+    
+}
+@section Scripts {
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/css/StyleSheet.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Start_Date, #Next_Due_Date').datepicker({
+                dateFormat: "dd/mm/yy" ,
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+        });
+    </script>
+    <style type="text/css">
+        .outergrid {
+            margin-top: 5px;
+            width: 98%;
+        }
+        .outergrid td{
+                background-color: #fffefe;
+            }
+        .header {
+            background-color: #9dee90;
+        }
+        .alt {
+            background-color: #808080;
+        }
+        .foot {background-color: #9dee90;
+        }
+    </style>
+}
+@using (Html.BeginForm("ViewFormulae", "SalaryFormulae", FormMethod.Post))
+{
+    <div class="heading">
+        Salary Formulae
+        <div style="float: right; padding-right: 30px;"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="divheight1">
+        <div class="innerform mT20 ">
+            <table class="myForm">
+                <tr>
+                    <td>
+                        @Html.Label("Start_Date") :
+                    </td>
+                    <td>
+                        @Html.TextBox("StartDate",null, new { id="Start_Date",@class="txtBox", @placeholder = "dd/mm/yyyy", @readonly = "true"})
+                        
+                        @*<input type="text" id="Start_Date" class="txtBox" placeholder="dd/mm/yyyy" />*@
+                         </td>
+                    <td>
+                        @Html.Label("Basic (%)") :
+                    </td>
+                    <td>
+                        @*<input type="text" id="Basic" class="txtBox" placeholder="Basic (%)" />*@
+                        @Html.TextBox("basic", null, new { id = "basic", @class = "text-field", @placeholder = "Basic" })
+                    </td>
+                    <td>
+                        @Html.Label("HRA (%)") :
+                    </td>
+                    <td>
+                        @*<input type="text" id="HRA" class="txtBox" placeholder="HRA (%)" />*@
+                        @Html.TextBox("HRA",null, new { @class = "txtBox", @placeholder = "House Rent Allowance" })
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Conveyance Allowance") :
+                    </td>
+                    <td>
+                        @*<input type="text" id="ConveyanceAllowance" class="txtBox" placeholder="Conveyance Allowance (%)" />*@
+                        @Html.TextBox("ConveyanceAllowance",null, new { @class = "txtBox", @placeholder = "Conveyance Allowance"})
+                    </td>
+                    <td>
+                        @Html.Label("Medical Allowance") :
+                    </td>
+                    <td>
+                        @*<input type="text" id="MedicalAllowance" class="txtBox" placeholder="Medical Allowance (%)" />*@
+                         @Html.TextBox("MedicalAllowance",null, new { @class = "txtBox", @placeholder = "Medical Allowance" })
+                    </td>
+                    <td style="text-align: right;">
+                        <input type="submit" name="Action" value="Search" class="search-btn" />
+                        <input type="submit" name="Action" value="Clear" class="search-btn" />
+                    </td>
+                    <td>
+                        <input type="button"  value="Add New Formulae" class="submit-btn" onclick="window.location.href='@Url.Action("AddFormulae")'" />
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+
+            <div id="gridContent2">
+
+                @grid.GetHtml(tableStyle: "outergrid",
+            headerStyle: "header",
+            alternatingRowStyle: "alt",
+            selectedRowStyle: "select",
+            footerStyle:"foot",
+            columns: grid.Columns(
+            grid.Column("Start_Date", "Start Date",format: (item) => string.Format("{0:dd/MM/yyyy}",item.Start_Date)),
+            grid.Column("Basic", "Basic (%)"),
+            grid.Column("HRA", "HRA (%)"),
+            grid.Column("Conveyance_Allowance", "Conveyance Allowance (%)"),
+            grid.Column("Medical_Allowance", "Medical Allowance (%)"),
+            grid.Column("Other_Allowance", "Other Allowance (%)"),
+            grid.Column("EPF_Limit", "EPF Limit"),
+            grid.Column("EPF_Employee_Share", "EPF Employee Share (%)"),
+            grid.Column("EPF_Employer_Share", "EPF Employer Share (%)"),
+            grid.Column("EPF_Applicable_On", "EPF Applicable On"),
+            grid.Column("ESI_Limit", "ESI_Limit"),
+            grid.Column("ESI_Employee_Share", "ESI Employee Share (%)"),
+            grid.Column("ESI_Employer_Share", "ESI Employer Share (%)"),
+            grid.Column("ESI_Applicable_On", "ESI Applicable On"),
+            grid.Column(header: "Action", 
+                format: @<text>
+                    <a href="@Url.Action("AddFormulae", "SalaryFormulae", new { Id = item.Entry_Id })" ><img src="../Content/images/edit.png" style="border:none;" /></a>
+                    <a href="@Url.Action("Delete", "SalaryFormulae", new { id = item.Entry_Id})"  onclick="return confirm('Are you sure you want to Delete?')" ><img src="../../Content/images/delete.png" style="border:none;" /></a>
+               </text>)
+            ))
+            </div>
+
+        </div>
+    </div>
+}

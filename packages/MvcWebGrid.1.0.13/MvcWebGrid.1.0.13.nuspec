@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MvcWebGrid</id>
+    <version>1.0.13</version>
+    <authors>mellis</authors>
+    <owners>mellis</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extends System.Web.Helper WebGrid functionality to allow the appending of filters (or any HTML) to column headers</description>
+    <releaseNotes>Added data-sort attribute to all columns</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+  </metadata>
+</package>
